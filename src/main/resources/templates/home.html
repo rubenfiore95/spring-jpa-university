@@ -11,11 +11,30 @@
     <title>Sito Università</title>
   </head>
   <body>
-  <div class="container">
-    <h1>Ciao ecco i dipartimenti delle nostre università</h1>
-    <ul>
-        <li th:each="dep : ${DepartmentsList} " th:text="${dep.getName()}"></li>
-    </ul>
-  </div>
+  <div th:replace="fragment :: navbar"></div>
+  <div class="container mx-auto" >
+    <h1 class="text-center mt-5">Ciao ecco i dipartimenti delle nostre università</h1>
+       <table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>e-mail</th>
+      <th>Website</th>
+      <th>Head Of Department</th>
+    </tr>
+  </thead>
+  <tbody>
+       <tr th:each="dep : ${DepartmentsList}">
+					<td th:text="${dep.getName()}"></td>
+					<td th:text="${dep.getAddress()}"></td>
+					<td th:text="${dep.getPhone()}"></td>
+					<td class ="text-center" th:text="${dep.getEmail()}"></td>
+					<td class ="text-center" th:text="${dep.website}"></td>
+					<td th:text="${dep.headOfDepartment}"></td>
+       </tr>
+    </tbody> 
+    </div>
   </body>
 </html>
