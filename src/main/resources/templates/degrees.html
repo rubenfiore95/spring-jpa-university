@@ -13,8 +13,8 @@
   <body>
   <div th:replace="fragment :: navbar"></div>
   <div class="container mx-auto" >
-    <h1 class="text-center mt-5">Ciao ecco i dipartimenti delle nostre università</h1>
-       <table class="table">
+  <h1 class="text-center mt-5">E qui ci sono i nostri corsi, con il dipartimento correlato</h1>
+  <table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,17 +22,21 @@
       <th>Phone</th>
       <th class="text-center">e-mail</th>
       <th class="text-center">Website</th>
-      <th>Head Of Department</th>
+      <th class="text-center">Dipartimento</th>
+      
     </tr>
   </thead>
   <tbody>
-       <tr th:each="dep : ${DepartmentsList}">
-					<td th:text="${dep.getName()}"></td>
-					<td th:text="${dep.getAddress()}"></td>
-					<td th:text="${dep.getPhone()}"></td>
-					<td class ="text-center" th:text="${dep.getEmail()}"></td>
-					<td class ="text-center" th:text="${dep.website}"></td>
-					<td th:text="${dep.headOfDepartment}"></td>
+       <tr th:each="deg : ${DegreeList}">
+					<td th:text="${deg.getName()}"></td>
+					<td th:text="${deg.level}"></td>
+					<td th:text="${deg.address}"></td>
+					<td class ="text-center" th:text="${deg.email}"></td>
+					<td class ="text-center" th:text="${deg.website}"></td>
+					<td class ="text-center">
+					<a th:href="@{|/degrees/${deg.getCourse().getId()}|}" th:text="${deg.getCourse().getName()}"></a>
+		            </td>		
+							
        </tr>
     </tbody> 
     </div>

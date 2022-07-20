@@ -13,28 +13,28 @@
   <body>
   <div th:replace="fragment :: navbar"></div>
   <div class="container mx-auto" >
-    <h1 class="text-center mt-5">Ciao ecco i dipartimenti delle nostre università</h1>
-       <table class="table">
-  <thead>
+  <h1 class="text-center mt-5">Ecco i nostri Insegnanti</h1>
+   
+   <table class="table">
+   <thead>
     <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th class="text-center">e-mail</th>
-      <th class="text-center">Website</th>
-      <th>Head Of Department</th>
+      <th>Nome</th>
+      <th>Cognome</th>  
+      <th>Link</th>  
+      
     </tr>
   </thead>
   <tbody>
-       <tr th:each="dep : ${DepartmentsList}">
-					<td th:text="${dep.getName()}"></td>
-					<td th:text="${dep.getAddress()}"></td>
-					<td th:text="${dep.getPhone()}"></td>
-					<td class ="text-center" th:text="${dep.getEmail()}"></td>
-					<td class ="text-center" th:text="${dep.website}"></td>
-					<td th:text="${dep.headOfDepartment}"></td>
+       <tr th:each="ins : ${Insegnanti}">
+					<td th:text="${ins.getName()}"></td>
+					<td th:text="${ins.getSurname()}"></td>	
+				    <td  class="col-1">
+				    <a th:href="@{|/teachers/${ins.getId()}|}" class="btn btn-primary">Dettagli</a>
+				    </td>
+									
        </tr>
     </tbody> 
+  
     </div>
   </body>
 </html>
