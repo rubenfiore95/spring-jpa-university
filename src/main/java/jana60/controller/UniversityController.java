@@ -35,7 +35,7 @@ public class UniversityController {
 	public String home(Model model) {
 		List<University> DepartmentsList =(List<University>)repo.findAll();
 		model.addAttribute("DepartmentsList" ,DepartmentsList);
-		return "home";
+		return "index";
 	}
 	
 		@GetMapping("/home")

@@ -10,14 +10,14 @@
 
     <title>Sito Università</title>
   </head>
-  <body>
+  <body class="text-white" style="background-image: url(https://mmaorlando.com/wp-content/uploads/2016/03/17701-displaying-12-images-for-mma-cage-background.png)">
   <div th:replace="fragment :: navbar"></div>
-  <div class="container mx-auto" >
+  <div class="container rounded mx-auto " style="background-image: url(/img/trasp.png)" >
   <h1 class="text-center mt-5">Ecco i nostri Insegnanti</h1>
    
    <table class="table">
    <thead>
-    <tr>
+    <tr class="text-white">
       <th>Nome</th>
       <th>Cognome</th>  
       <th>Link</th>  
@@ -25,16 +25,16 @@
     </tr>
   </thead>
   <tbody>
-       <tr th:each="ins : ${Insegnanti}">
+       <tr class="text-white" th:each="ins : ${Insegnanti}">
 					<td th:text="${ins.getName()}"></td>
 					<td th:text="${ins.getSurname()}"></td>	
 				    <td  class="col-1">
-				    <a th:href="@{|/teachers/${ins.getId()}|}" class="btn btn-primary">Dettagli</a>
+				    <a th:href="@{|/teachers/${ins.getId()}|}" class=" btn btn-success">Dettagli</a>
 				    </td>
 									
        </tr>
     </tbody> 
   
     </div>
-  </body>
+  </bodyclass="text-white">
 </html>

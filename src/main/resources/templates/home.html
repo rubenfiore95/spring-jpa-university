@@ -10,13 +10,13 @@
 
     <title>Sito Università</title>
   </head>
-  <body>
+  <body style="background-image: url(https://mmaorlando.com/wp-content/uploads/2016/03/17701-displaying-12-images-for-mma-cage-background.png)">
   <div th:replace="fragment :: navbar"></div>
-  <div class="container mx-auto" >
-    <h1 class="text-center mt-5">Ciao ecco i dipartimenti delle nostre università</h1>
+  <div class="container mx-auto" style="background-image: url(/img/trasp.png)" >
+    <h1 class="text-center mt-5 text-white">Ciao Duro! Ecco i dipartimenti della nostra Università:</h1>
        <table class="table">
   <thead>
-    <tr>
+    <tr class="text-white">
       <th>Name</th>
       <th>Address</th>
       <th>Phone</th>
@@ -26,7 +26,7 @@
     </tr>
   </thead>
   <tbody>
-       <tr th:each="dep : ${DepartmentsList}">
+       <tr class="text-white" th:each="dep : ${DepartmentsList}">
 					<td th:text="${dep.getName()}"></td>
 					<td th:text="${dep.getAddress()}"></td>
 					<td th:text="${dep.getPhone()}"></td>

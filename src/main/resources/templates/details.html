@@ -10,13 +10,13 @@
 
     <title>Sito Università</title>
   </head>
-  <body>
+  <body class="text-white" style="background-image: url(https://mmaorlando.com/wp-content/uploads/2016/03/17701-displaying-12-images-for-mma-cage-background.png)">
   <div th:replace="fragment :: navbar"></div>
-  <div class="container mx-auto" >
+  <div class="container mx-auto " style="background-image: url(/img/trasp.png)" >
   <h1 class="text-center mt-5">Dettagli Dipartimento</h1>
     <table class="table">
    <thead>
-    <tr>
+    <tr class="text-white">
       <th>Nome</th>
       <th>Indirizzo</th>  
       <th>Telefono</th> 
@@ -27,7 +27,7 @@
     </tr>
   </thead>
   <tbody>
-        <tr class = "text-primary">
+        <tr class="text-white">
 			<td th:text="${degreeDetail.getName()}"></td>
 			<td th:text="${degreeDetail.getAddress()}"></td>
 			<td th:text="${degreeDetail.getPhone()}"></td>
